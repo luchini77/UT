@@ -66,10 +66,11 @@ def leer():
 
     cursor=conexion.cursor()
 
+    b=nBuzon.get()
 
-    cursor.execute("SELECT * FROM ubicaciones WHERE buzon=?" + nBuzon.get())
+    elBuzon=cursor.execute(f"SELECT * FROM ubicaciones WHERE buzon='{b}'").fetchall()
 
-    elBuzon=cursor.fetchall()
+
 
     for bzn in elBuzon:
 
